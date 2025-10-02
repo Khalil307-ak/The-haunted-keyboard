@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الكيبورد المسكون</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            text-align: center;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #fff;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        input {
+            width: 80%;
+            padding: 15px;
+            font-size: 20px;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+            outline: none;
+            transition: transform 0.3s ease;
+            text-align: right; /* لتنسيق الكتابة العربية */
+            direction: rtl; /* لتنسيق الكتابة العربية */
+        }
+
+        input:focus {
+            transform: scale(1.05);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <h1>جرب تكتب هنا</h1>
+    <input type="text" id="textInput" placeholder="اكتب أي شيء...">
+
+    <script>
+        // مصفوفة العبارات المسكونة بالدارجة
+        // هذا هو المكان اللي خاصك تحط فيه القائمة الجديدة الكاملة:
+
+const prankTexts = [
+    "هاهاها",
+    "راك مشدود!",
+    "وش نتا هكر؟",
+    "عطيها التوبة",
+    "كتكتب ولا كتسحر؟",
+    "والدنيا دوارة",
+    "فين غادي بهاد السرعة؟",
+    "رجّع الباسورد دابا!",
+    "عينيك فالشاشة وأنا معاك...",
+    "حسابك تبلوكا!",
+    "راك كتكتب فشي كتاب مسحور",
+    "شكون عيط ليك دابا؟",
+    "عطيها سبات حسن",
+    "وش عاقل على البارتسيون C؟",
+    "راك مراقَب!",
+    "صافي صافي باراكا",
+    "وش عارف شكون قرا هادشي؟",
+    "فين هو VPN؟",
+    "غادي تطيح الشبكة...",
+    "أنا هو الكيبورد، ماشي نتا!",
+    "الـ BIOS كيعيط ليك.",  // 🎉 **الكلمات الجديدة تبدأ هنا**
+    "بَدّل الـ MAC Address دغيا!",
+    "وش عارف فين مشا الباسورد؟",
+    "الـ Ram خاصها النعاس.",
+    "غير سير شرب أتاي حسن ليك.",
+    "نظام التشغيل كضحك عليك.",
+    "راك داخل من الـ Port الغلط.",
+    "نوض نوض سالينا اليوم.",
+    "عيني على الـ CPU ديالك.",
+    "راك وصلتي للـ Loop الأبدية.",
+    "حاول تسد الـ Terminal دابا!",
+    "وتا سير ضربها ليك بشي تكفيتة!",
+    "ما عندكش الـ Privileges." 
+];
+
+// ... باقي الكود ...
+        
+        // جلب حقل الإدخال
+        const textInput = document.getElementById("textInput");
+
+        // إضافة مستمع للحدث 'input' (عند إدخال أي شيء)
+        textInput.addEventListener("input", function() {
+            // اختيار رسالة عشوائية
+            let randomIndex = Math.floor(Math.random() * prankTexts.length);
+            let randomText = prankTexts[randomIndex];
+            
+            // استبدال النص المدخل بالرسالة العشوائية، هذه هي الخدعة!
+            this.value = randomText;
+        });
+    </script>
+</body>
+</html>
